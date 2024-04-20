@@ -1,16 +1,11 @@
-<div class="t-10 h-full w-full text-center"> <!-- bg-gradient-to-tl from-zinc-800 to-indigo-900 -->
+<div class="t-10  w-full text-center"> <!-- bg-gradient-to-tl from-zinc-800 to-indigo-900 -->
     <div class="w-fit h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md shadow-black drop-shadow-lg">
         <h1 class="nav-xl mb-2">Guilde PGM</h1>
         <p class="nav-m">Bienvenue sur l'appli de gestion de la guilde PGM</p>
-        <!-- <div class="bg-test1 w-5 h-5"> test1</div>
-        <div class="bg-test2 w-5 h-5"> test2</div>
-        <div class="bg-test3 w-5 h-5"> test3</div>
-        <div class="bg-test4 w-5 h-5"> test4</div>
-        <div class="bg-test5 w-5 h-5"> test5</div> -->
     </div>
     
     <div class="grid grid-cols-3 gap-36">
-        <div class="w-fit mt-10 h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md">
+        <div class="w-fit mt-10 h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 shadow-black drop-shadow-lg mx-auto rounded-md">
             <h2 class="nav-m">Nombre de membre dans la guilde : {{guild.members.length + guild.officier.length}}</h2>
         </div>
         <div class="w-fit mt-10 h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md">
@@ -18,19 +13,19 @@
             <div class="mt-2 ">
                 <h3 class="nav-s"> Officier</h3>
                 <div class="inline-flex flex-wrap gap-3 mb-5 ">
-                    <div *ngFor="let member of guild.officier" class="h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md">
+                    <div *ngFor="let member of guild.officier" class="h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 shadow-black drop-shadow-lg mx-auto rounded-md">
                         <p class="nav-m">{{member.name }}</p>
                     </div>
                 </div>
                 <h3 class="nav-s">Membre</h3>
                 <div class="inline-flex flex-wrap gap-3 ">
-                    <div *ngFor="let member of guild.members" class="h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md">
+                    <div *ngFor="let member of guild.members" class="h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 shadow-black drop-shadow-lg mx-auto rounded-md">
                         <p class="nav-m">{{member.name }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-fit mt-10 h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md">
+        <div class="w-fit mt-10 h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 shadow-black drop-shadow-lg mx-auto rounded-md">
             <h2 class="nav-m">Payout en cours : </h2>
             <div>
                 <img src="assets/loader.gif" alt="logo" class="w-40 h-5 mx-auto mt-10">

@@ -1,11 +1,7 @@
 
-<main class="w-full h-full overscroll-x-none bg-[url('./assets/bg.jpg')] ">
-  <app-nav-bar (tab)="onChangeTab($event)"></app-nav-bar>
-  <div class="h-full" *ngIf="tab===0"><app-home   ></app-home></div>
+<main class="w-full min-h-screen bg-cover bg-[url('./assets/bg.jpg')]"> <!--  -->
+  <div class="mb-20"><app-nav-bar  (tab)="onChangeTab($event)"></app-nav-bar></div>
+  <div class="h-full" *ngIf="tab===0"><app-home></app-home></div>
   <div class="h-full" *ngIf="tab===1"><app-payout ></app-payout></div>
 </main>
 
-
-
-
-<router-outlet />

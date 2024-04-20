@@ -1,6 +1,6 @@
 
-<div class="w-full bg-test3 pr-32 2xl:gap-52 lg:gap-32 md:gap-10 justify-end inline-flex [&>*]:nav-l">
-    <div class="p-5 h-full cursor-pointer" [ngClass]="{'bg-test2': currentTab === 0}" (click)="goTo(0)">home</div>
-    <div class="p-5 h-full cursor-pointer" [ngClass]="{'bg-test2': currentTab === 1}" (click)="goTo(1)">Payout</div>
-    <div class="p-5 h-full cursor-pointer" [ngClass]="{'bg-test2': currentTab === 2}" (click)="goTo(2)">Route Ava</div>
+<div class="w-full backdrop-blur-sm bg-stone-100/30 pr-32 2xl:gap-52 lg:gap-32 md:gap-10 justify-end inline-flex ">
+    <div class="p-5 h-full cursor-pointer transition-color ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 0, '':currentTab != 0}" (click)="goTo(0)">Home</div>
+    <div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 1, '':currentTab != 1}" (click)="goTo(1)">Payout</div>
+    <div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 2, '':currentTab != 2}" (click)="goTo(2)">Route Ava</div>
 </div>

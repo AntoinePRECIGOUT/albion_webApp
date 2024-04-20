@@ -12,14 +12,12 @@ import { Component } from '@angular/core';
 })
 export class PayoutComponent {
   public payoutForm!: FormGroup 
+  public inputName: string = '';
+  public audio = new Audio();
   
   constructor(private formbuilder: FormBuilder) {
-    this.payoutForm = this.formbuilder.group({
-      name: [''],
-      chest: [''],
-      date: [''],
-      value: [''],
-    }); }
+    this.audio.src = '../assets/aroundTheWorld.mp3';
+  }
   get rowHead(){
     return Object.keys(this.rowData[0]);
   }
@@ -58,12 +56,37 @@ export class PayoutComponent {
   ]
 
   ngOnInit(): void {
+    this.payoutForm = this.formbuilder.group({
+      name: ['',Validators.required],
+      chest: ['',Validators.required],
+      date: ['',Validators.required],
+      value: ['',Validators.required],
+    }); 
   }
 
 
   addPayout(){
-    console.log(this.payoutForm.value);
     this.rowData.push(this.payoutForm.value);
-    this.payoutForm.reset();
+    this.payoutForm.reset(); 
+    this.audio.pause();
+  }
+
+  onTabChanged(event: any){
+    console.log(event);
+  }
+
+  upperCase(value: string){
+    return value.toUpperCase();
+  }
+  playSound(){
+    if (this.payoutForm.status === 'VALID'){
+      this.audio.load();
+      this.audio.play();
+    }
+  }
+
+
+  stopSound(){
+    this.audio.pause();
   }
 }
