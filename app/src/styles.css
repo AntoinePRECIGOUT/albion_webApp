@@ -2,3 +2,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .nav-xl {
+      @apply text-3xl font-normal;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*    30 SemiBold ?? breadCrumb */
+    .nav-l {
+      @apply text-lg font-normal;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*  18 SemiBold  */
+    .nav-m {
+      @apply text-lg font-normal;
+      font-family: 'Inter', verdana;
+    }
+  
+    /* 18 SemiBold  */
+    .nav-s {
+      @apply text-xs font-semibold uppercase;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*  12 SemiBold  */
+    .text-l {
+      @apply text-sm font-semibold;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*   14 Regular  */
+    .text-m {
+      @apply text-sm font-normal;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*  14 Regular  */
+    .text-s {
+      @apply text-xs font-normal;
+      font-family: 'Inter', verdana;
+    }
+  
+    /*   12 SemiBold    petite info type pagination  */
+  }
+  
+  @layer utilities {
+    .font-icon {
+      font-family: 'adesio';
+    }
+  }
+  
