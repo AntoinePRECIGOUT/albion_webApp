@@ -13,10 +13,10 @@ import { Component } from '@angular/core';
 export class PayoutComponent {
   public payoutForm!: FormGroup 
   public inputName: string = '';
-  public audio = new Audio();
+  private alreadyPlayed: boolean = false;
+  public audio:any
   
   constructor(private formbuilder: FormBuilder) {
-    this.audio.src = '../assets/aroundTheWorld.mp3';
   }
   get rowHead(){
     return Object.keys(this.rowData[0]);
@@ -65,28 +65,32 @@ export class PayoutComponent {
   }
 
 
-  addPayout(){
+  addPayout(audio:any){
+    audio.pause();
     this.rowData.push(this.payoutForm.value);
     this.payoutForm.reset(); 
-    this.audio.pause();
   }
 
-  onTabChanged(event: any){
-    console.log(event);
-  }
 
   upperCase(value: string){
     return value.toUpperCase();
   }
   playSound(){
-    if (this.payoutForm.status === 'VALID'){
-      this.audio.load();
-      this.audio.play();
+    let audio = new Audio('../assets/aroundTheWorld.mp3');
+    if (this.alreadyPlayed === true && audio.paused === true){
+      this.alreadyPlayed = false;
     }
+    if (this.payoutForm.status === 'VALID' && this.alreadyPlayed === false){
+      this.alreadyPlayed = true;
+      audio.load();
+      audio.playbackRate = 1.5;
+      audio.play();
+    }
+    return audio
   }
 
 
-  stopSound(){
-    this.audio.pause();
+  stopSound(audio:any){
+    audio.pause(); 
   }
 }

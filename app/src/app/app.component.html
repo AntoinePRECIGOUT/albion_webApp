@@ -1,7 +1,9 @@
 
 <main class="w-full min-h-screen bg-cover bg-[url('./assets/bg.jpg')]"> <!--  -->
-  <div class="mb-20"><app-nav-bar  (tab)="onChangeTab($event)"></app-nav-bar></div>
-  <div class="h-full" *ngIf="tab===0"><app-home></app-home></div>
-  <div class="h-full" *ngIf="tab===1"><app-payout ></app-payout></div>
+  <div class="mb-20"><app-nav-bar ></app-nav-bar></div>
+  <router-outlet></router-outlet>
+  
 </main>
+
+
 

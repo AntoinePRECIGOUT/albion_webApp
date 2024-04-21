@@ -1,6 +1,15 @@
 
 <div class="w-full backdrop-blur-sm bg-stone-100/30 pr-32 2xl:gap-52 lg:gap-32 md:gap-10 justify-end inline-flex ">
+    <a routerLink="home"><div class="p-5 h-full cursor-pointer transition-color ease-in-out delay-150 nav-l" [routerLinkActive]="['bg-test2']" (click)="goTo(0)">Home</div></a>
+    <a routerLink="payout"><div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [routerLinkActive]="['bg-test2']" (click)="goTo(1) ">Payout</div></a>
+    <a routerLink="avaroad"><div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [routerLinkActive]="['bg-test2']" (click)="goTo(2) ">Route Ava</div></a>
+</div>
+
+
+<!-- 
+<div class="w-full backdrop-blur-sm bg-stone-100/30 pr-32 2xl:gap-52 lg:gap-32 md:gap-10 justify-end inline-flex ">
     <div class="p-5 h-full cursor-pointer transition-color ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 0, '':currentTab != 0}" (click)="goTo(0)">Home</div>
     <div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 1, '':currentTab != 1}" (click)="goTo(1)">Payout</div>
     <div class="p-5 h-full cursor-pointer transition ease-in-out delay-150 nav-l" [ngClass]="{'bg-test2 ': currentTab === 2, '':currentTab != 2}" (click)="goTo(2)">Route Ava</div>
 </div>
+ -->

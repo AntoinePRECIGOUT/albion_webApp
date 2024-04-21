@@ -1,7 +1,7 @@
 <div class="pt-10 h-full w-full text-center px-10"> 
     <div class="w-fit h-fit py-5 px-5 backdrop-blur-sm bg-stone-100/30 mx-auto rounded-md shadow-black drop-shadow-lg">
         <h1 class="nav-xl mb-2">Nouveau Payout</h1>
-        <form [formGroup]="payoutForm" (selectedTabChange)="onTabChanged($event)" class="block text-left">
+        <form [formGroup]="payoutForm"  class="block text-left">
             <div class="mt-6">
                 <label for="zone" class="text-left">Nom du Payout</label>
                 <input formControlName="name" type="text" [value]="inputName" class="w-80 h-10 rounded-s bg-transparent border placeholder-gray-800 px-5 border-bgborder block" placeholder="EX: PK Black zone">
@@ -19,11 +19,11 @@
                 <input formControlName="value" type="number" min="0" class="w-80 h-10 rounded-s bg-transparent border placeholder-gray-800 px-5 border-bgborder block" placeholder="1500000 ">
             </div>
             <button
-              (click)="addPayout()"
-              (mouseenter)="playSound()"
-              (mouseleave)="stopSound()"
-              (focus)="playSound()"
-              (unfocus)="stopSound()"
+              (click)="addPayout(audio)"
+              (mouseenter)="audio = playSound()"
+              (mouseleave)="stopSound(audio)"
+              (focus)="audio = playSound()"
+              (unfocus)="stopSound(audio)"
               [disabled]="payoutForm.status != 'VALID'"
               [ngClass]="{'bg-test3 hover:animate-spin focus:animate-spin': payoutForm.status == 'VALID', 'bg-test2': payoutForm.status != 'VALID'}"
               class="mt-5 w-80 h-10 rounded-s shadow-black drop-shadow-lg block bg-test3 text-white ">
